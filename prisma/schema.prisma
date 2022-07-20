@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "./data.db"
+}
+
+model BookRequest {
+  id           Int     @id @default(autoincrement())
+  title        String?
+  author       String?
+  format       String?
+  notification Boolean @default(false)
+  email        String?
+  name         String?
+  fufilled     Boolean @default(false)
+  linkToFill   String?
+}
+
