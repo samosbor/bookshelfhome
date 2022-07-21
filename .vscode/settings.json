@@ -6,8 +6,5 @@
         "other": "on",
         "comments": "off",
         "strings": "on"
-    },
-    "tailwindCSS.includeLanguages": {
-        "plaintext": "html"
     }
 }

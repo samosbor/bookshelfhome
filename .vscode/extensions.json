@@ -2,6 +2,8 @@
     "recommendations": [
         "bradlc.vscode-tailwindcss",
         "esbenp.prettier-vscode",
-        "Prisma.prisma"
+        "prisma.prisma",
+        "willluke.nextjs",
+        "dsznajder.es7-react-js-snippets"
     ]
 }
