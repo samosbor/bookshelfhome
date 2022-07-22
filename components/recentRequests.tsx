@@ -5,8 +5,8 @@ export default function recentRequests() {
   const { data, error } = useSWR("/api/allBookRequests");
   const bookRequests: BookRequest[] = data;
 
-  if (error) return <div>Failed to load</div>;
-  if (!bookRequests) return <div>Loading...</div>;
+  if (error) return <div>Failed to load recent requests</div>;
+  if (!bookRequests) return <div>Loading recent requests...</div>;
 
   return (
     <div className="overflow-auto shadow-xl sm:mx-4 sm:rounded-lg">
