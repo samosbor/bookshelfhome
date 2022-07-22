@@ -1,3 +1,3 @@
 /** @type {import('next').NextConfig} */
 const withMDX = require('@next/mdx')()
-module.exports = withMDX()
+module.exports = withMDX({output: 'standalone'})
