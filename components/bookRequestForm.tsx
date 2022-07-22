@@ -1,7 +1,10 @@
 import { Transition } from "@headlessui/react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import useWindowDimensions from "../hooks/useWindowDimensions"
+import { useSWRConfig } from 'swr'
 export default function bookRequestForm() {
+  const { mutate } = useSWRConfig()
+
   let [requestsVisible, setRequestsVisible] = useState(false);
   const { width, height } = useWindowDimensions();
   if ( width != undefined && width > 768) {
@@ -10,7 +13,6 @@ export default function bookRequestForm() {
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-    console.log(event);
 
     const data = {
       title: event.target.title.value,
@@ -32,9 +34,8 @@ export default function bookRequestForm() {
 
     // Send the form data to our forms API on Vercel and get a response.
     const response = await fetch(endpoint, options);
-
     const result = await response.json();
-    console.log(result);
+    mutate("/api/allBookRequests")
   };
   return (
     <div>

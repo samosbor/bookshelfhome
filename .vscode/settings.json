@@ -6,5 +6,7 @@
         "other": "on",
         "comments": "off",
         "strings": "on"
-    }
+    },
+    "WillLuke.nextjs.addTypesOnSave": true,
+    "WillLuke.nextjs.hasPrompted": true
 }

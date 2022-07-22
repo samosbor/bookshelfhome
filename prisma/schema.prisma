@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "./data.db"
+  url      = env("DATABASE_URL")
 }
 
 model BookRequest {
@@ -19,6 +19,7 @@ model BookRequest {
   email        String?
   name         String?
   fufilled     Boolean @default(false)
-  linkToFill   String?
+  linkToEbook   String?
+  linkToAudio   String?
 }
 

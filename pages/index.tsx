@@ -1,24 +1,13 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import bookRequestForm from "../components/bookRequestForm";
+import header from "../components/header"
+import recentRequests from "../components/recentRequests";
 
-const Home: NextPage = () => {
+const Home: NextPage = (props) => {
   return (
     <div>
-      <Head>
-        <title>bookshelf</title>
-        <style>{"body { background-color: white; }"}</style>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div className="relative bg-base-100 drop-shadow-xl">
-        <div className="flex justify-start py-6 px-4 sm:px-6">
-          <span className="text-2xl">the&nbsp;</span>
-          <span className="text-2xl font-bold text-primary">osborne</span>
-          <span className="text-2xl">&nbsp;bookshelf</span>
-        </div>
-      </div>
-
+      {header()}
       <div className="md:grid md:grid-cols-3">
         {/* <!-- left column --> */}
         <div className="col-span-1">
@@ -104,6 +93,10 @@ const Home: NextPage = () => {
             <div className="py-5">
               <div className="border-gray-200 border-t"></div>
             </div>
+          </div>
+
+          <div>
+            {recentRequests()}
           </div>
         </div>
       </div>

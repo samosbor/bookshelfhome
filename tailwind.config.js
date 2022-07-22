@@ -16,7 +16,14 @@ module.exports = {
       warning: "#FBBD23",
       error: "#F87272",
     },
-    extend: {},
+    extend: {
+      dropShadow: {
+        'pink': [
+          '0 20px 13px rgba(250, 229, 229, 0.4)',
+          '0 8px 5px rgba(250, 229, 229, 0.3)'
+      ]
+      }
+    }
   },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 };

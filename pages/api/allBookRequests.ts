@@ -2,10 +2,9 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { BookRequest, PrismaClient } from '@prisma/client'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-    const newBookRequest: BookRequest = req.body
     const prisma = new PrismaClient()
 
-    await prisma.bookRequest.create({data: newBookRequest})
+    let allBookRequests: BookRequest[] = await prisma.bookRequest.findMany()
 
-    res.status(200).json({ "message":"Added request", "newBookRequest": newBookRequest })
+    res.status(200).json(allBookRequests)
   }
