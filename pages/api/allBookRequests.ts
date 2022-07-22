@@ -1,10 +1,13 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-import { BookRequest, PrismaClient } from '@prisma/client'
+import { NextApiRequest, NextApiResponse } from "next";
+import { BookRequest, PrismaClient } from "@prisma/client";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-    const prisma = new PrismaClient()
+  const prisma = new PrismaClient();
 
-    let allBookRequests: BookRequest[] = await prisma.bookRequest.findMany()
+  let allBookRequests: BookRequest[] = await prisma.bookRequest.findMany({
+    orderBy: { id: "desc" },
+    take: 5,
+  });
 
-    res.status(200).json(allBookRequests)
-  }
+  res.status(200).json(allBookRequests);
+};

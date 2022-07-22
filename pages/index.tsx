@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import bookRequestForm from "../components/bookRequestForm";
-import header from "../components/header"
+import header from "../components/header";
 import recentRequests from "../components/recentRequests";
 
 const Home: NextPage = (props) => {
@@ -91,13 +91,11 @@ const Home: NextPage = (props) => {
 
           <div className="hidden sm:block" aria-hidden="true">
             <div className="py-5">
-              <div className="border-gray-200 border-t"></div>
+              <div className="border-t border-gray-200"></div>
             </div>
           </div>
 
-          <div>
-            {recentRequests()}
-          </div>
+          <div>{recentRequests()}</div>
         </div>
       </div>
     </div>
