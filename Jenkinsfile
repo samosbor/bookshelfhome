@@ -8,9 +8,7 @@ pipeline {
   stages {
     stage('Install NPM') {
       steps {
-        sh 'apt install nodejs'
-        sh 'apt install npm'
-        sh 'apt install npx'
+        nodejs 'node-latest'
       }
     }
 
@@ -30,12 +28,6 @@ pipeline {
     stage('start-prod') {
       steps {
         sh 'npm run start-prod'
-      }
-    }
-
-    stage('fgda') {
-      steps {
-        nodejs 'node-latest'
       }
     }
 
