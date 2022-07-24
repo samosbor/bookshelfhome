@@ -6,15 +6,14 @@ pipeline {
 
   }
   stages {
-        stage('Install NPM') {
-          steps {
-            sh 'sudo apt install nodejs'
-            sh 'sudo apt install npm'
-            sh 'sudo apt install npx'
-          }
-        }
+    stage('Install NPM') {
+      steps {
+        sh 'sudo apt install nodejs'
+        sh 'sudo apt install npm'
+        sh 'sudo apt install npx'
+      }
+    }
 
-        
     stage('npm install') {
       steps {
         sh 'npm install'
@@ -28,7 +27,7 @@ pipeline {
       }
     }
 
-    stage('start') {
+    stage('start-prod') {
       steps {
         sh 'npm run start-prod'
       }
