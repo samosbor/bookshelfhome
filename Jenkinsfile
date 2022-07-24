@@ -10,6 +10,7 @@ pipeline {
       steps {
         npm 'install'
         npm 'install -g npx --force'
+        sh 'npm install -g npx'
       }
     }
 
