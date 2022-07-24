@@ -7,10 +7,22 @@ pipeline {
   }
   stages {
     stage('npm install') {
-      steps {
-        npm 'install'
-        npm 'install -g npx --force'
-        sh 'npm install -g npx'
+      parallel {
+        stage('npm install') {
+          steps {
+            npm 'install'
+            npm 'install -g npx --force'
+          }
+        }
+
+        stage('Install NPM') {
+          steps {
+            sh 'sudo apt install nodejs'
+            sh 'sudo apt install npm'
+            sh 'sudo apt install npx'
+          }
+        }
+
       }
     }
 
