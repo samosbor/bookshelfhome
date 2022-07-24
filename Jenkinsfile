@@ -9,13 +9,12 @@ pipeline {
     stage('npm install') {
       steps {
         npm 'install'
+        npm 'install -g npx --force'
       }
     }
 
     stage('migrate') {
       steps {
-        npm 'npx prisma migrate'
-        npm 'prisma migrate'
         sh 'npx prisma migrate'
         sh 'npx prisma migrate deploy'
       }
