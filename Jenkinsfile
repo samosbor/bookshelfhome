@@ -6,15 +6,6 @@ pipeline {
 
   }
   stages {
-    stage('npm install') {
-      parallel {
-        stage('npm install') {
-          steps {
-            npm 'install'
-            npm 'install -g npx --force'
-          }
-        }
-
         stage('Install NPM') {
           steps {
             sh 'sudo apt install nodejs'
@@ -23,8 +14,8 @@ pipeline {
           }
         }
 
-      }
-    }
+        
+
 
     stage('migrate') {
       steps {
