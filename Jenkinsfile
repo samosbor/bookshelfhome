@@ -15,7 +15,11 @@ pipeline {
         }
 
         
-
+    stage('npm install') {
+      steps {
+        sh 'npm install'
+      }
+    }
 
     stage('migrate') {
       steps {
@@ -26,7 +30,7 @@ pipeline {
 
     stage('start') {
       steps {
-        npm 'run start-prod'
+        sh 'npm run start-prod'
       }
     }
 
