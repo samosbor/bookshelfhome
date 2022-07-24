@@ -17,7 +17,7 @@ const Home: NextPage = (props) => {
                 <div className="flex-no-shrink">
                   <Image
                     alt="audiobooks"
-                    src="/img/audiobookshelf.png"
+                    src="/audiobookshelf.png"
                     width={64}
                     height={64}
                   />
@@ -51,7 +51,7 @@ const Home: NextPage = (props) => {
                 <div className="flex-no-shrink">
                   <Image
                     alt="books"
-                    src="/img/calibre.PNG"
+                    src="/calibre.png"
                     width={64}
                     height={64}
                   />
