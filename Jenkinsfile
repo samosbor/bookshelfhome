@@ -1,9 +1,15 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'host'
+    }
+
+  }
   stages {
     stage('npm install') {
       steps {
         npm 'install'
+        npm 'install -g npx'
       }
     }
 
@@ -16,7 +22,7 @@ pipeline {
 
     stage('start') {
       steps {
-        sh 'npm run start'
+        npm 'run start-prod'
       }
     }
 
