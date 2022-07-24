@@ -9,7 +9,6 @@ pipeline {
     stage('npm install') {
       steps {
         npm 'install'
-        npm 'install -g npx'
       }
     }
 
