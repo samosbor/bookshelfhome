@@ -14,8 +14,8 @@ pipeline {
 
     stage('migrate') {
       steps {
-        npm 'prisma migrate'
         npm 'npx prisma migrate'
+        npm 'prisma migrate'
         sh 'npx prisma migrate'
         sh 'npx prisma migrate deploy'
       }
