@@ -33,5 +33,11 @@ pipeline {
       }
     }
 
+    stage('fgda') {
+      steps {
+        nodejs 'node-latest'
+      }
+    }
+
   }
 }
