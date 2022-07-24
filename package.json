@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "start-prod": "next start --port 8093"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.6",
