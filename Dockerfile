@@ -57,7 +57,7 @@ ENV PORT 8093
 RUN ls
 RUN pwd
 VOLUME /prisma
-ENV DATABASE_URL=file:/app/prisma/prod.db
+ENV DATABASE_URL=file:/prisma/prod.db
 RUN npx prisma migrate deploy --schema /prisma/schema.prisma
 
 CMD ["node", "server.js"] 
