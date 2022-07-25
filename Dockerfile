@@ -23,6 +23,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 
 # Migrate DB
 RUN echo pwd
+RUN echo ls
 RUN npx prisma migrate deploy
 
 # RUN yarn build
