@@ -21,6 +21,10 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 ENV NEXT_TELEMETRY_DISABLED 1
 
+VOLUME /app/prisma
+ENV DATABASE_URL=file:/app/prisma/prod.db
+RUN npx prisma migrate deploy
+
 # RUN yarn build
 
 # If using npm comment out above and use below instead
@@ -55,10 +59,5 @@ EXPOSE 8093
 ENV PORT 8093
 
 # Migrate DB
-RUN ls
-RUN pwd
-VOLUME /app/prisma
-ENV DATABASE_URL=file:/app/prisma/prod.db
-RUN npx prisma migrate deploy
 
 CMD ["node", "server.js"] 
