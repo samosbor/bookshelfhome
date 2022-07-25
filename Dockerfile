@@ -23,6 +23,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 
 VOLUME /app/prisma
 ENV DATABASE_URL=file:/app/prisma/prod.db
+RUN npx prisma generate
 RUN npx prisma migrate deploy
 
 # RUN yarn build
