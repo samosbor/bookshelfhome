@@ -56,6 +56,6 @@ ENV PORT 8093
 # Migrate DB
 VOLUME /app/prisma
 ENV DATABASE_URL=file:/app/prisma/prod.db
-RUN npx prisma migrate deploy
+RUN npx prisma migrate deploy --schema /app/prisma
 
 CMD ["node", "server.js"] 
