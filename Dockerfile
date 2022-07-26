@@ -34,4 +34,7 @@ EXPOSE 8093
 
 ENV PORT 8093
 
+RUN ls
+
+
 CMD ["node", "server.js"] 
