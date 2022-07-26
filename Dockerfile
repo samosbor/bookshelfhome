@@ -20,7 +20,7 @@ VOLUME /app/prisma
 ENV DATABASE_URL=file:/app/prisma/prod.db
 
 RUN npm run build
-RUN chmod 777 -R /app
+RUN sudo chmod 777 /app/prisma/prod.db
 RUN npx prisma generate
 RUN npx prisma migrate deploy
 
