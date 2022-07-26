@@ -34,4 +34,4 @@ EXPOSE 8093
 
 ENV PORT 8093
 
-CMD ["npx", "next start"] 
+CMD ["npx", "next", "start"] 
