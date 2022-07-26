@@ -58,6 +58,7 @@ USER nextjs
 EXPOSE 8093
 
 ENV PORT 8093
+ENV DATABASE_URL=file:/app/prisma/prod.db
 
 # Migrate DB
 
