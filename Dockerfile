@@ -14,7 +14,7 @@ ENV DATABASE_URL=file:/app/prisma/prod.db
 
 RUN npm run build
 RUN npx prisma generate
-RUN npx prisma migrate deploy
+RUN chmod +x startup.sh
 
 ENV NODE_ENV production
 
@@ -27,4 +27,4 @@ EXPOSE 8093
 
 ENV PORT 8093
 
-CMD ["npx", "next", "start"] 
+CMD ["/bin/sh", "startup.sh"]
