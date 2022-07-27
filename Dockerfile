@@ -11,8 +11,8 @@ ENV NEXT_TELEMETRY_DISABLED 1
 
 ENV DATABASE_URL=file:/data/prod.db
 
-RUN npm run build
 RUN npx prisma generate
+RUN npm run build
 RUN chmod +x startup.sh
 
 ENV NODE_ENV production
