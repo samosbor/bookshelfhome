@@ -5,6 +5,7 @@ services:
     container_name: bookshelfhome
     ports:
       - 8093:8093
+      - 5555:5555
+    # volumes:
+    #   - /var/jenkins_home/bookshelfdb:/app/prisma
     restart: unless-stopped
-    volumes:
-      - /var/jenkins_home/bookshelfdb:/app/prisma
