@@ -5,7 +5,7 @@ services:
     container_name: bookshelfhome
     ports:
       - 8093:8093
-      - 5555:5555
+      - 8095:8095
     volumes:
-      - /dockerappconfigs/bookshelfhome/prisma:/app/prisma
+      - /dockerappconfigs/bookshelfhome/data:/data
     restart: unless-stopped
