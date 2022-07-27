@@ -20,9 +20,11 @@ VOLUME /app/prisma
 ENV DATABASE_URL=file:/app/prisma/prod.db
 
 RUN npm run build
-RUN chmod a+rwx /app/prisma/prod.db
+RUN chmod a+rwx -R /app/prisma
 RUN npx prisma generate
+RUN chmod a+rwx -R /app/prisma
 RUN npx prisma migrate deploy
+RUN chmod a+rwx -R /app/prisma
 
 ENV NODE_ENV production
 
