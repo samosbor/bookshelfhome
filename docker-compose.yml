@@ -6,6 +6,9 @@ services:
     ports:
       - 8093:8093
       - 5555:5555
-    # volumes:
-    #   - /var/jenkins_home/bookshelfdb:/app/prisma
+    volumes:
+      - data:/app/prisma
     restart: unless-stopped
+
+volumes:
+  data:
