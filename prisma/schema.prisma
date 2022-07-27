@@ -2,8 +2,8 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
-  binaryTargets=["native"]
+  provider      = "prisma-client-js"
+  binaryTargets = ["native"]
 }
 
 datasource db {
@@ -17,10 +17,10 @@ model BookRequest {
   author       String?
   format       String?
   notification Boolean @default(false)
+  anonymous    Boolean @default(false)
   email        String?
   name         String?
   fufilled     Boolean @default(false)
-  linkToEbook   String?
-  linkToAudio   String?
+  linkToEbook  String?
+  linkToAudio  String?
 }
-

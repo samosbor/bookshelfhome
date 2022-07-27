@@ -19,6 +19,7 @@ export default function bookRequestForm() {
       author: event.target.author.value,
       format: event.target.title.value,
       notification: event.target.notification.checked,
+      anonymous: event.target.anonymous.checked,
       email: event.target.email.value,
       name: event.target.name.value,
     };
@@ -172,6 +173,30 @@ export default function bookRequestForm() {
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+
+                <div className="col-span-6 sm:col-span-4">
+                  <div className="my-4 sm:col-span-2">
+                    <div className="flex items-start">
+                      <div className="flex h-5 items-center">
+                        <input
+                          id="anonymous"
+                          name="anonymous"
+                          type="checkbox"
+                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-primary-400"
+                        />
+                      </div>
+                      <div className="ml-3 text-sm">
+                        <label
+                          htmlFor="anonymous"
+                          className="font-medium text-gray-700"
+                        >
+                          Anonymous
+                        </label>
+                      </div>
+                    </div>
+                    <div className="text-sm text-gray-500">Don't show in recent list</div>
                   </div>
                 </div>
 
