@@ -6,7 +6,7 @@ COPY package.json package-lock.json* ./
 RUN npm install sharp
 RUN npm ci
 COPY prisma ./prisma/
-RUN chmod a+rwx -R /prisma
+RUN chmod a+rwx -R ./prisma
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
