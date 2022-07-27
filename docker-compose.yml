@@ -7,5 +7,5 @@ services:
       - 8093:8093
       - 5555:5555
     volumes:
-      - /dockerappconfigs/bookshelfhome/prisma:/app/prisma
+      - /dockerappconfigs/bookshelfhome:/app
     restart: unless-stopped
