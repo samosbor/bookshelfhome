@@ -1,17 +1,10 @@
-FROM node:16-alpine AS deps
+FROM node:16-alpine
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 COPY package.json package-lock.json* ./
 RUN npm install sharp
-RUN npm ci  || \
-  (echo "Lockfile not found." && exit 1)
-
-
-# Rebuild the source code only when needed
-FROM node:16-alpine
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+RUN npm ci
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
