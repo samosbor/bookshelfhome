@@ -9,7 +9,6 @@ COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
 
-VOLUME /app/prisma
 ENV DATABASE_URL=file:/app/prisma/prod.db
 
 RUN npm run build
