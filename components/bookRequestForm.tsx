@@ -2,13 +2,23 @@ import { Transition } from "@headlessui/react";
 import { useState } from "react";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import { useSWRConfig } from "swr";
+import recentRequests from "./recentRequests";
+
 export default function bookRequestForm() {
   const { mutate } = useSWRConfig();
-
   let [requestsVisible, setRequestsVisible] = useState(false);
+
   const { width, height } = useWindowDimensions();
   if (width != undefined && width > 768) {
     requestsVisible = true;
+  }
+
+  function getRequestDropArrowClass() {
+    if (requestsVisible) {
+      return "ml-auto place-self-end p-2 rotate-90";
+    } else {
+      return "ml-auto place-self-end p-2";
+    }
   }
 
   const handleSubmit = async (event: any) => {
@@ -17,7 +27,7 @@ export default function bookRequestForm() {
     const data = {
       title: event.target.title.value,
       author: event.target.author.value,
-      format: event.target.title.value,
+      format: event.target.format.value,
       notification: event.target.notification.checked,
       anonymous: event.target.anonymous.checked,
       email: event.target.email.value,
@@ -41,15 +51,15 @@ export default function bookRequestForm() {
   return (
     <div className="mb-8 md:mb-0">
       <div
-        onClick={() =>
-          setRequestsVisible((requestsVisible) => !requestsVisible)
-        }
-        className="mx-1 mb-8 flex rounded-md bg-secondary p-4 drop-shadow-xl md:mb-0 md:hidden"
+        onClick={() => {
+          setRequestsVisible((requestsVisible) => !requestsVisible);
+        }}
+        className="mb-8 flex rounded-md bg-secondary p-4 drop-shadow-xl md:mb-0 md:hidden"
       >
         <div className="flex p-3">
           <span className="text-2xl">Request a New Book </span>
         </div>
-        <div className="ml-auto place-self-end">
+        <div className={getRequestDropArrowClass()}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -61,7 +71,7 @@ export default function bookRequestForm() {
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              d="M19 9l-7 7-7-7"
+              d="M9 5l7 7-7 7"
             />
           </svg>
         </div>
@@ -75,11 +85,11 @@ export default function bookRequestForm() {
         leave="transition ease-in duration-75"
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
-      >
+      > 
         <form onSubmit={handleSubmit} method="POST">
           <div className="drop-shadow-xl">
-            <div className="bg-white px-4 py-5 sm:p-6">
-              <div className="mb-3">
+            <div className="bg-white px-4 py-5 sm:p-6 rounded-t-lg">
+              <div className="mb-3 rounded-lg">
                 <h3 className="text-lg font-medium leading-6 text-gray-900">
                   Request a book
                 </h3>
@@ -160,7 +170,7 @@ export default function bookRequestForm() {
                             id="notification"
                             name="notification"
                             type="checkbox"
-                            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-primary-400"
+                            className="h-4 w-4 rounded border-gray-300 text-primary-600 focus:ring-primary-400"
                           />
                         </div>
                         <div className="ml-3 text-sm">
@@ -184,7 +194,7 @@ export default function bookRequestForm() {
                           id="anonymous"
                           name="anonymous"
                           type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-primary-400"
+                          className="h-4 w-4 rounded border-gray-300 text-primary-600 focus:ring-primary-400"
                         />
                       </div>
                       <div className="ml-3 text-sm">
@@ -196,7 +206,9 @@ export default function bookRequestForm() {
                         </label>
                       </div>
                     </div>
-                    <div className="text-sm text-gray-500">Don't show in recent list</div>
+                    <div className="text-sm text-gray-500">
+                      Don't show in recent list
+                    </div>
                   </div>
                 </div>
 
@@ -233,7 +245,7 @@ export default function bookRequestForm() {
                 </div>
               </div>
             </div>
-            <div className="bg-gray-50 px-4 py-3 text-right sm:px-6 sm:text-left">
+            <div className="bg-gray-50 px-4 py-3 text-right sm:px-6 sm:text-left rounded-b-lg">
               <button
                 type="submit"
                 className="inline-flex justify-center rounded-md border border-transparent bg-primary-400 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
@@ -243,6 +255,14 @@ export default function bookRequestForm() {
             </div>
           </div>
         </form>
+
+        <div className="hidden sm:block" aria-hidden="true">
+          <div className="py-5">
+            <div className="border-t border-gray-200"></div>
+          </div>
+        </div>
+
+        <div className="mx-[-1rem] sm:mx-0">{recentRequests()}</div>
       </Transition>
     </div>
   );

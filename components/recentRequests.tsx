@@ -9,12 +9,12 @@ export default function recentRequests() {
   if (!bookRequests) return <div>Loading recent requests...</div>;
 
   return (
-    <div className="overflow-auto shadow-xl sm:mx-4 sm:rounded-lg">
+    <div className="overflow-auto shadow-xl sm:rounded-lg">
       <table className="w-full table-fixed border-collapse text-left text-sm text-gray-500">
         <caption className="bg-white p-5 text-left text-lg font-semibold text-gray-900">
           Recent Requests
         </caption>
-        <thead className="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700">
+        <thead className="bg-gray-50 text-xs uppercase text-gray-700">
           <tr>
             <th scope="col" className="w-1/2 py-3 px-4">
               Title
