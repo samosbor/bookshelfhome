@@ -24,3 +24,11 @@ model BookRequest {
   linkToEbook  String?
   linkToAudio  String?
 }
+
+model BookReview {
+  id         Int     @id @default(autoincrement())
+  title      String?
+  author     String?
+  reviewText String?
+  name       String?
+}

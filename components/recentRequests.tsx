@@ -1,4 +1,4 @@
-import useSWR, { Key, Fetcher } from "swr";
+import useSWR from "swr";
 import { BookRequest } from "@prisma/client";
 
 export default function recentRequests() {
