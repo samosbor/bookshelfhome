@@ -9,7 +9,7 @@ export default function recentRequests() {
   if (!bookRequests) return <div>Loading recent requests...</div>;
 
   return (
-    <div className="overflow-auto shadow-xl sm:rounded-lg">
+    <div className="overflow-auto shadow-xl rounded-lg m-1 sm:m-0 mt-5">
       <table className="w-full table-fixed border-collapse text-left text-sm text-gray-500">
         <caption className="bg-white p-5 text-left text-lg font-semibold text-gray-900">
           Recent Requests

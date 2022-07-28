@@ -109,11 +109,11 @@ const Home: NextPage = (props) => {
             </div>
           </div>
         </div>
-        
+
       </div>
-      <footer className="sticky top-[100vh] flex items-center justify-between rounded-lg bg-white p-4 shadow md:p-6">
+      <footer className="sticky top-[100vh] flex items-center justify-between rounded-t-lg bg-white p-4 shadow md:p-6">
         <span className="text-sm text-primary-200">For friends and family</span>
-        <span className="text-sm text-primary-200">
+        <span className="text-sm text-primary-100 font-extralight">
           <a href="http://bookshelfadmin.jk">Admin</a>
         </span>
       </footer>
