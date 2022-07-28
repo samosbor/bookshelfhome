@@ -12,7 +12,7 @@ export default function header() {
       <Link href="/">
         <a>
           <div className="relative z-10 rounded-b-lg bg-white drop-shadow-xl">
-            <div className="flex justify-start py-4 px-4 sm:py-6 sm:px-6">
+            <div className="flex justify-start py-4 px-4 sm:py-6 sm:px-6 tracking-tight">
               <span className="text-2xl">the&nbsp;</span>
               <span className="text-2xl font-bold text-primary-400">
                 osborne
