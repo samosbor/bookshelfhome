@@ -43,7 +43,6 @@ export default function bookRequestForm() {
       body: JSONdata,
     };
 
-    // Send the form data to our forms API on Vercel and get a response.
     const response = await fetch(endpoint, options);
     const result = await response.json();
     mutate("/api/allBookRequests");
