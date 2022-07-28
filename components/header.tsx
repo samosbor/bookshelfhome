@@ -1,15 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
+import styles from "../styles/header.module.css"
 export default function header() {
-
-  const myStyle: React.CSSProperties = {
-    backgroundImage: `url("books2.png")`,
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    mixBlendMode: 'overlay',
-    maskImage: "-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))"
-  }
-
   return (
     <div className="pb-4">
       <Head>
@@ -34,8 +26,7 @@ export default function header() {
           </div>
         </a>
       </Link>
-      <div className="absolute top-0 h-96 w-full bg-gradient-to-r" style={myStyle}>
-
+      <div className={styles.bookbg}>
       </div>
     </div>
   );
