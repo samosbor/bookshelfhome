@@ -56,7 +56,7 @@ export default function bookRequestForm() {
         className="mb-8 flex rounded-md bg-secondary p-4 drop-shadow-xl md:mb-0 md:hidden"
       >
         <div className="flex p-3">
-          <span className="text-2xl">Request a New Book </span>
+          <span className="text-2xl font-semibold">Request a New Book </span>
         </div>
         <div className={getRequestDropArrowClass()}>
           <svg

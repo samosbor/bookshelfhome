@@ -10,7 +10,7 @@ const Home: NextPage = (props) => {
       <div className="md:grid md:grid-cols-3">
         {/* <!-- left column --> */}
         <div className="col-span-1">
-          <div className="sm:max-w-sm p-4">
+          <div className="p-4 sm:max-w-sm">
             <a href="https://audio.theosbornebookshelf.com/">
               <div className="m-0 flex rounded-md bg-secondary p-4 drop-shadow-xl">
                 <div className="flex-no-shrink">
@@ -22,7 +22,7 @@ const Home: NextPage = (props) => {
                   />
                 </div>
                 <div className="p-3">
-                  <span className="text-2xl">Audiobooks</span>
+                  <span className="text-2xl font-semibold">Audiobooks</span>
                 </div>
                 <div className="ml-auto place-self-end">
                   <svg
@@ -44,7 +44,7 @@ const Home: NextPage = (props) => {
             </a>
           </div>
 
-          <div className="sm:max-w-sm p-4">
+          <div className="p-4 sm:max-w-sm">
             <a href="https://books.theosbornebookshelf.com/">
               <div className="m-0 flex rounded-md bg-secondary p-4 drop-shadow-xl">
                 <div className="flex-no-shrink">
@@ -56,7 +56,7 @@ const Home: NextPage = (props) => {
                   />
                 </div>
                 <div className="p-3">
-                  <span className="text-2xl">eBooks</span>
+                  <span className="text-2xl font-semibold">eBooks</span>
                 </div>
                 <div className="ml-auto place-self-end">
                   <svg
@@ -109,11 +109,12 @@ const Home: NextPage = (props) => {
             </div>
           </div>
         </div>
-
       </div>
       <footer className="sticky top-[100vh] flex items-center justify-between rounded-t-lg bg-white p-4 shadow md:p-6">
-        <span className="text-sm text-primary-200">For friends and family</span>
-        <span className="text-sm text-primary-100 font-extralight">
+        <span className="text-sm text-primary-200">
+          <a href="https://youtu.be/du-TY1GUFGk">For friends and family</a>
+        </span>
+        <span className="text-sm font-extralight text-primary-100">
           <a href="http://bookshelfadmin.jk">Admin</a>
         </span>
       </footer>
