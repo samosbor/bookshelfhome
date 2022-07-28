@@ -11,21 +11,21 @@ const Setup: NextPage = (props) => {
           <div className="relative w-full p-2 md:mx-auto md:max-w-3xl lg:max-w-4xl">
             <a href="/">
               <div className="flex text-primary-500">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M11 17l-5-5m0 0l5-5m-5 5h12"
-                />
-              </svg>
-              <span>Back to home</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M11 17l-5-5m0 0l5-5m-5 5h12"
+                  />
+                </svg>
+                <span>Back to home</span>
               </div>
             </a>
           </div>

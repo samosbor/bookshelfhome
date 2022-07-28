@@ -84,10 +84,10 @@ export default function bookRequestForm() {
         leave="transition ease-in duration-75"
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
-      > 
+      >
         <form onSubmit={handleSubmit} method="POST">
           <div className="drop-shadow-xl">
-            <div className="bg-white px-4 py-5 sm:p-6 rounded-t-lg">
+            <div className="rounded-t-lg bg-white px-4 py-5 sm:p-6">
               <div className="mb-3 rounded-lg">
                 <h3 className="text-lg font-medium leading-6 text-gray-900">
                   Request a book
@@ -244,7 +244,7 @@ export default function bookRequestForm() {
                 </div>
               </div>
             </div>
-            <div className="bg-gray-50 px-4 py-3 text-right sm:px-6 sm:text-left rounded-b-lg">
+            <div className="rounded-b-lg bg-gray-50 px-4 py-3 text-right sm:px-6 sm:text-left">
               <button
                 type="submit"
                 className="inline-flex justify-center rounded-md border border-transparent bg-primary-400 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"

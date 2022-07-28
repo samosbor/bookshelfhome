@@ -9,7 +9,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const gotifyPostData = {
     title: "New Osborne BookRequest",
-    message: JSON.stringify(newBookRequest, null, '\t'),
+    message: JSON.stringify(newBookRequest, null, "\t"),
     priority: 5,
   };
 
@@ -20,7 +20,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     },
     url: "http://gotify.jk/message?token=AI.UXEEHBii5.DJ",
     data: gotifyPostData,
-  })
+  });
 
   res
     .status(200)

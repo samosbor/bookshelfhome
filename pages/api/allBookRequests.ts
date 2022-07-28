@@ -3,7 +3,6 @@ import { BookRequest } from "@prisma/client";
 import prisma from "./_base";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-
   let allBookRequests: BookRequest[] = await prisma.bookRequest.findMany({
     where: { anonymous: false },
     orderBy: { id: "desc" },
