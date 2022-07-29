@@ -5,7 +5,7 @@ import footer from "../components/footer";
 import header from "../components/header";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import Div100vh from "../components/div100vh";
-import bookReviews from "../components/bookReviews";
+import recentReviews from "../components/recentReviews";
 
 const Home: NextPage = (props) => {
   const { width, height } = useWindowDimensions();
@@ -117,7 +117,7 @@ const Home: NextPage = (props) => {
       </div>
 
       <div>
-        <div className="m-4 sm:mt-0">{bookReviews()}</div>
+        <div className="m-4 sm:mt-0">{recentReviews()}</div>
       </div>
 
       {footer()}

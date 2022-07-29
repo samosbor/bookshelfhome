@@ -4,11 +4,11 @@ import useWindowDimensions from "../hooks/useWindowDimensions";
 import useSWR from "swr";
 import { BookReview } from "@prisma/client";
 
-export default function bookReviews() {
+export default function recentReviews() {
   let [reviewsVisible, setReviewsVisible] = useState(false);
   const { width, height } = useWindowDimensions();
 
-  const { data, error } = useSWR("/api/bookReviews");
+  const { data, error } = useSWR("/api/reviews/recent");
   const bookReviews: BookReview[] = data;
 
   if (error) return <div>Failed to load book reviews</div>;

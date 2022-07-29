@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { BookRequest } from "@prisma/client";
-import prisma from "./_base";
+import prisma from "../_base";
 import axios from "axios";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {

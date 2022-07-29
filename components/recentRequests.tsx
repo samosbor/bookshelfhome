@@ -2,7 +2,7 @@ import useSWR from "swr";
 import { BookRequest } from "@prisma/client";
 
 export default function recentRequests() {
-  const { data, error } = useSWR("/api/allBookRequests");
+  const { data, error } = useSWR("/api/requests/recent");
   const bookRequests: BookRequest[] = data;
 
   if (error) return <div>Failed to load recent requests</div>;

@@ -43,7 +43,7 @@ export default function bookRequestForm(width: number | undefined) {
 
     const response = await fetch(endpoint, options);
     const result = await response.json();
-    mutate("/api/allBookRequests");
+    mutate("/api/requests/create");
   };
   return (
     <div className="mb-8 md:mb-0">
