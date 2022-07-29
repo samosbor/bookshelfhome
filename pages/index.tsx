@@ -1,9 +1,12 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import bookRequestForm from "../components/bookRequestForm";
+import footer from "../components/footer";
 import header from "../components/header";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const Home: NextPage = (props) => {
+  const { width, height } = useWindowDimensions();
   return (
     <div className="min-h-screen">
       {header()}
@@ -22,7 +25,9 @@ const Home: NextPage = (props) => {
                   />
                 </div>
                 <div className="p-3">
-                  <span className="text-2xl font-semibold tracking-tight">Audiobooks</span>
+                  <span className="text-2xl font-semibold tracking-tight">
+                    Audiobooks
+                  </span>
                 </div>
                 <div className="ml-auto place-self-end">
                   <svg
@@ -56,7 +61,9 @@ const Home: NextPage = (props) => {
                   />
                 </div>
                 <div className="p-3">
-                  <span className="text-2xl font-semibold tracking-tight">eBooks</span>
+                  <span className="text-2xl font-semibold tracking-tight">
+                    eBooks
+                  </span>
                 </div>
                 <div className="ml-auto place-self-end">
                   <svg
@@ -105,21 +112,13 @@ const Home: NextPage = (props) => {
         <div className="col-span-2">
           <div className="mt-10 pt-2 sm:mt-0">
             <div className="m-4">
-              <div className="md:col-span-2 md:mt-0">{bookRequestForm()}</div>
+              <div className="md:col-span-2 md:mt-0">{bookRequestForm(width)}</div>
             </div>
           </div>
         </div>
       </div>
-      <div className="self-end">
-        <footer className="flex justify-between self-end rounded-t-lg bg-white p-4 shadow md:p-6">
-          <span className="text-sm text-primary-200">
-            <a href="https://youtu.be/du-TY1GUFGk">For friends and family</a>
-          </span>
-          <span className="text-sm font-extralight text-primary-100">
-            <a href="http://bookshelfadmin.jk">Admin</a>
-          </span>
-        </footer>
-      </div>
+
+      {footer(height)}
     </div>
   );
 };

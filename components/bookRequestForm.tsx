@@ -1,14 +1,12 @@
 import { Transition } from "@headlessui/react";
 import { useState } from "react";
-import useWindowDimensions from "../hooks/useWindowDimensions";
 import { useSWRConfig } from "swr";
 import recentRequests from "./recentRequests";
 
-export default function bookRequestForm() {
+export default function bookRequestForm(width: number | undefined) {
   const { mutate } = useSWRConfig();
   let [requestsVisible, setRequestsVisible] = useState(false);
 
-  const { width, height } = useWindowDimensions();
   if (width != undefined && width > 768) {
     requestsVisible = true;
   }
