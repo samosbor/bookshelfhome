@@ -30,5 +30,5 @@ model BookReview {
   title      String?
   author     String?
   reviewText String?
-  name       String?
+  reviewer   String?
 }

@@ -5,14 +5,15 @@ import useSWR from "swr";
 import { BookReview } from "@prisma/client";
 
 export default function bookReviews() {
-  const { data, error } = useSWR("/api/bookReviews");
-  const BookReview: BookReview[] = data;
-
-  if (error) return <div>Failed to load recent requests</div>;
-  if (!BookReview) return <div>Loading recent requests...</div>;
-  let [reviewsVisible, setreviewsVisible] = useState(false);
-
+  let [reviewsVisible, setReviewsVisible] = useState(false);
   const { width, height } = useWindowDimensions();
+
+  const { data, error } = useSWR("/api/bookReviews");
+  const bookReviews: BookReview[] = data;
+
+  if (error) return <div>Failed to load book reviews</div>;
+  if (!bookReviews) return <div>Loading book reviews...</div>;
+
   if (width != undefined && width > 768) {
     reviewsVisible = true;
   }
@@ -28,7 +29,7 @@ export default function bookReviews() {
     <div className="mb-8 md:mb-0">
       <div
         onClick={() => {
-          setreviewsVisible((reviewsVisible) => !reviewsVisible);
+          setReviewsVisible((reviewsVisible) => !reviewsVisible);
         }}
         className="mb-8 flex rounded-md bg-secondary p-4 drop-shadow-xl md:mb-0 md:hidden"
       >
@@ -62,7 +63,12 @@ export default function bookReviews() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <div className="mx-[-1rem] sm:mx-0">reviews</div>
+        {bookReviews &&
+          bookReviews.map((bookReview: BookReview) => (
+            <div className="mx-[-1rem] sm:mx-0" key={bookReview.id}>
+              {bookReview.title}
+            </div>
+          ))}
       </Transition>
     </div>
   );

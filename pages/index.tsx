@@ -5,6 +5,7 @@ import footer from "../components/footer";
 import header from "../components/header";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import Div100vh from "../components/div100vh";
+import bookReviews from "../components/bookReviews";
 
 const Home: NextPage = (props) => {
   const { width, height } = useWindowDimensions();
@@ -111,14 +112,12 @@ const Home: NextPage = (props) => {
         {/* <!-- request panel --> */}
 
         <div className="col-span-2">
-          <div className="mt-10 pt-2 sm:mt-0">
-            <div className="m-4">
-              <div className="md:col-span-2 md:mt-0">
-                {bookRequestForm(width)}
-              </div>
-            </div>
-          </div>
+          <div className="m-4 mt-20 pt-2 sm:mt-0">{bookRequestForm(width)}</div>
         </div>
+      </div>
+
+      <div>
+        <div className="m-4 sm:mt-0">{bookReviews()}</div>
       </div>
 
       {footer()}
