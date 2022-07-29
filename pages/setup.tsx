@@ -6,7 +6,7 @@ const Setup: NextPage = (props) => {
   return (
     <div>
       {header()}
-      <div className="relative flex min-h-screen flex-col justify-center overflow-hidden break-words bg-gray-50 py-8 lg:py-12">
+      <div className="relative flex min-h-screen flex-col justify-center overflow-hidden break-words py-8 lg:py-12">
         <article>
           <div className="relative w-full p-2 md:mx-auto md:max-w-3xl lg:max-w-4xl">
             <a href="/">
