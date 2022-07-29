@@ -4,11 +4,12 @@ import bookRequestForm from "../components/bookRequestForm";
 import footer from "../components/footer";
 import header from "../components/header";
 import useWindowDimensions from "../hooks/useWindowDimensions";
+import Div100vh from "../components/div100vh";
 
 const Home: NextPage = (props) => {
   const { width, height } = useWindowDimensions();
   return (
-    <div className="min-h-screen">
+    <Div100vh>
       {header()}
       <div className="md:grid md:grid-cols-3">
         {/* <!-- left column --> */}
@@ -112,14 +113,16 @@ const Home: NextPage = (props) => {
         <div className="col-span-2">
           <div className="mt-10 pt-2 sm:mt-0">
             <div className="m-4">
-              <div className="md:col-span-2 md:mt-0">{bookRequestForm(width)}</div>
+              <div className="md:col-span-2 md:mt-0">
+                {bookRequestForm(width)}
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {footer(height)}
-    </div>
+      {footer()}
+    </Div100vh>
   );
 };
 
