@@ -29,8 +29,9 @@ const Setup: NextPage = (props) => {
               </div>
             </a>
           </div>
+
           <div className="relative w-full rounded-xl bg-white px-6 py-12 shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5 md:mx-auto md:max-w-3xl lg:max-w-4xl lg:pt-16 lg:pb-28">
-            <div className="prose prose-sm mx-auto md:prose-base">
+            <div className="prose prose-sm mx-auto md:prose-base prose-img:border-2 prose-img:border-dashed">
               <SetupMarkdown />
             </div>
           </div>

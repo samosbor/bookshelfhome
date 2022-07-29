@@ -34,7 +34,7 @@ export default function bookReviews() {
         className="mb-8 flex rounded-md bg-secondary p-4 drop-shadow-xl md:mb-0 md:hidden"
       >
         <div className="flex p-3">
-          <span className="text-2xl font-semibold">Book reviews</span>
+          <span className="text-2xl font-semibold">Book Reviews</span>
         </div>
         <div className={getReviewDropArrowClass()}>
           <svg

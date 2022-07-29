@@ -12,21 +12,23 @@ datasource db {
 }
 
 model BookRequest {
-  id           Int     @id @default(autoincrement())
+  id           Int      @id @default(autoincrement())
+  created      DateTime @default(now())
   title        String?
   author       String?
   format       String?
-  notification Boolean @default(false)
-  anonymous    Boolean @default(false)
+  notification Boolean  @default(false)
+  anonymous    Boolean  @default(false)
   email        String?
   name         String?
-  fufilled     Boolean @default(false)
+  fufilled     Boolean  @default(false)
   linkToEbook  String?
   linkToAudio  String?
 }
 
 model BookReview {
-  id         Int     @id @default(autoincrement())
+  id         Int      @id @default(autoincrement())
+  created    DateTime @default(now())
   title      String?
   author     String?
   reviewText String?
