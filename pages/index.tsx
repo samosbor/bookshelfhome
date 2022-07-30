@@ -15,7 +15,7 @@ const Home: NextPage = (props) => {
       <div className="md:grid md:grid-cols-3">
         {/* <!-- left column --> */}
         <div className="col-span-1">
-          <div className="p-4 sm:max-w-sm">
+          <div className="p-4 md:max-w-sm">
             <a href="https://audio.theosbornebookshelf.com/">
               <div className="m-0 flex rounded-md bg-secondary p-4 drop-shadow-xl">
                 <div className="flex-no-shrink">
@@ -51,7 +51,7 @@ const Home: NextPage = (props) => {
             </a>
           </div>
 
-          <div className="p-4 sm:max-w-sm">
+          <div className="p-4 md:max-w-sm">
             <a href="https://books.theosbornebookshelf.com/">
               <div className="m-0 flex rounded-md bg-secondary p-4 drop-shadow-xl">
                 <div className="flex-no-shrink">

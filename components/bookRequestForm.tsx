@@ -19,6 +19,14 @@ export default function bookRequestForm(width: number | undefined) {
     }
   }
 
+  function getRequestCardClass() {
+    if (requestsVisible) {
+      return "mb-4 flex rounded-md bg-primary-100 p-4 drop-shadow-xl md:mb-0 md:hidden";
+    } else {
+      return "mb-4 flex rounded-md bg-secondary p-4 drop-shadow-xl md:mb-0 md:hidden";
+    }
+  }
+
   const handleSubmit = async (event: any) => {
     event.preventDefault();
 
@@ -51,7 +59,7 @@ export default function bookRequestForm(width: number | undefined) {
         onClick={() => {
           setRequestsVisible((requestsVisible) => !requestsVisible);
         }}
-        className="mb-8 flex rounded-md bg-secondary p-4 drop-shadow-xl md:mb-0 md:hidden"
+        className={getRequestCardClass()}
       >
         <div className="flex p-3">
           <span className="text-2xl font-semibold">Request a New Book </span>
