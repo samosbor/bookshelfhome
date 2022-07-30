@@ -253,7 +253,7 @@ export default function bookRequestForm(width: number | undefined) {
             <div className="rounded-b-lg bg-gray-50 px-4 py-3 text-right sm:px-6 sm:text-left">
               <button
                 type="submit"
-                className="inline-flex justify-center rounded-md border border-transparent bg-primary-400 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
+                className="inline-flex justify-center rounded-md border border-transparent bg-primary-400 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
               >
                 Submit
               </button>
