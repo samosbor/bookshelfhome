@@ -3,7 +3,11 @@ import { useState } from "react";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import useSWR from "swr";
 import { BookReview } from "@prisma/client";
-import moment from "moment";
+import dayjs from "dayjs";
+import calendar from "dayjs/plugin/calendar";
+import relativeTime from "dayjs/plugin/relativeTime";
+dayjs.extend(calendar);
+dayjs.extend(relativeTime);
 
 export default function recentReviews() {
   let [reviewsVisible, setReviewsVisible] = useState(false);
@@ -17,6 +21,19 @@ export default function recentReviews() {
 
   if (width != undefined && width > 768) {
     reviewsVisible = true;
+  }
+
+  function getFormmatedDate(date: Date): String {
+    dayjs().calendar();
+    const day = dayjs(date);
+    return day.calendar(Date.now(), {
+      sameDay: () => {
+        return day.fromNow();
+      },
+      lastDay: "[Yesterday]", // The day before ( Yesterday )
+      lastWeek: "[Last] dddd", // Last week ( Last Monday )
+      sameElse: "MMM Do, YYYY", // Everything else ( 7/10/2011 )
+    });
   }
 
   function getReviewDropArrowClass() {
@@ -90,17 +107,15 @@ export default function recentReviews() {
                   {bookReview.reviewText}
                 </p>
                 <div className="float-right flex flex-col">
-                  <div className="float-right text-gray-400">
-                    - {bookReview.reviewer ? bookReview.reviewer : "Anonymous"}
-                  </div>
+                  {bookReview.reviewer ? (
+                    <div className="float-right place-self-end text-gray-400">
+                      - {bookReview.reviewer}
+                    </div>
+                  ) : (
+                    <div></div>
+                  )}
                   <div className="float-right text-xs text-gray-300">
-                    {moment(bookReview.created).calendar({
-                      sameDay(m?, now?) {
-                        return moment(m).fromNow();
-                      },
-                      lastDay: "[Yesterday]",
-                      lastWeek: "[Last] dddd",
-                    })}
+                    {getFormmatedDate(bookReview.created)}
                   </div>
                 </div>
               </div>
