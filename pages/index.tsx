@@ -6,6 +6,7 @@ import header from "../components/header";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import Div100vh from "../components/div100vh";
 import recentReviews from "../components/recentReviews";
+import cheapKindleToast from "../components/cheapKindleToast";
 
 const Home: NextPage = (props) => {
   const { width, height } = useWindowDimensions();
@@ -139,6 +140,10 @@ const Home: NextPage = (props) => {
 
       <div>
         <div className="m-4 sm:mt-0">{recentReviews()}</div>
+      </div>
+
+      <div>
+        <div className="m-4 sm:mt-0">{cheapKindleToast()}</div>
       </div>
 
       {footer()}
