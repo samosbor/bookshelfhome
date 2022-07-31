@@ -40,7 +40,7 @@ export default function bookRequestForm(width: number | undefined) {
       name: event.target.name.value,
     };
     const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/bookForm";
+    const endpoint = "/api/requests/create";
     const options = {
       method: "POST",
       headers: {
