@@ -140,9 +140,9 @@ const Home: NextPage = (props) => {
         <div className="m-4 sm:mt-0">{recentReviews()}</div>
       </div>
 
-      <div>
+      {/* <div>
         <div className="m-4 sm:mt-0">{cheapKindleToast()}</div>
-      </div>
+      </div> */}
 
       {footer()}
     </Div100vh>
