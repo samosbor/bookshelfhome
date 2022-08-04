@@ -110,7 +110,7 @@ export default function recentReviews() {
                       {bookReview.author}
                     </div>
                   </div>
-                  <div className="mr-1">
+                  <div className="mr-1" hidden={bookReview.rating === 0}>
                     <Rating
                       initialValue={bookReview.rating}
                       ratingValue={0}
