@@ -32,5 +32,6 @@ model BookReview {
   title      String?
   author     String?
   reviewText String?
+  rating     Float    @default(0)
   reviewer   String?
 }

@@ -6,7 +6,7 @@ import { BookReview } from "@prisma/client";
 import dayjs from "dayjs";
 import calendar from "dayjs/plugin/calendar";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { Rating } from 'react-simple-star-rating'
+import { Rating } from "react-simple-star-rating";
 import styles from "../styles/recentReviews.module.css";
 dayjs.extend(calendar);
 dayjs.extend(relativeTime);
@@ -111,7 +111,13 @@ export default function recentReviews() {
                     </div>
                   </div>
                   <div className="mr-1">
-                    <Rating initialValue={4} ratingValue={5} size={22} className={styles.svgBlock}/>
+                    <Rating
+                      initialValue={bookReview.rating}
+                      ratingValue={0}
+                      size={22}
+                      className={styles.svgBlock}
+                      readonly={true}
+                    />
                   </div>
                 </div>
 
