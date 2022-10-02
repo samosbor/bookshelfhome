@@ -74,6 +74,21 @@ const Home: NextPage = (props) => {
           </div>
 
           <div className="p-4 md:max-w-sm">
+            <p>
+              Ok, i've been messing with the email settings trying to get them
+              right for send-to-kindle.
+            </p>
+            <p>Here's what you need to do</p>
+            <p>
+              Change your kindle's send-to-kindle email address to something
+              super unique. Like, not your first and last name. Make it like
+              numbers and special characters
+            </p>
+            <p>Then, allow send-to-kindle emails from sam@theosbornebookshelf.com</p>
+            <p>lmk if it doesnt work</p>
+          </div>
+
+          <div className="p-4 md:max-w-sm">
             <a href="https://audio.theosbornebookshelf.com/">
               <div className="m-0 flex rounded-md bg-secondary p-4 drop-shadow-xl">
                 <div className="flex-no-shrink">
