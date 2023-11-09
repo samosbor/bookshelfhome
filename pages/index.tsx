@@ -17,7 +17,7 @@ const Home: NextPage = (props) => {
         {/* <!-- left column --> */}
         <div className="col-span-1">
           <div className="p-4 md:max-w-sm">
-            <a href="https://books.theosbornebookshelf.com/">
+            <a href="https://books.osbornefam.org/">
               <div className="m-0 flex rounded-md bg-secondary p-4 drop-shadow-xl">
                 <div className="flex-no-shrink">
                   <Image
@@ -84,12 +84,12 @@ const Home: NextPage = (props) => {
               super unique. Like, not your first and last name. Make it like
               numbers and special characters
             </p>
-            <p>Then, allow send-to-kindle emails from sam@theosbornebookshelf.com</p>
+            <p>Then, allow send-to-kindle emails from sam@osbornefam.org</p>
             <p>lmk if it doesnt work</p>
           </div>
 
           <div className="p-4 md:max-w-sm">
-            <a href="https://audio.theosbornebookshelf.com/">
+            <a href="https://audio.osbornefam.org/">
               <div className="m-0 flex rounded-md bg-secondary p-4 drop-shadow-xl">
                 <div className="flex-no-shrink">
                   <Image
